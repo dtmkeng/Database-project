@@ -14,7 +14,7 @@ create table account(
    PRIMARY key (account_id),
    FOREIGN key  (user_id) REFERENCES users(user_id)
 );
-create table company(
+create table company(  
     company_id VARCHAR2(50) not null,
     company_name varchar2(100) not null,
     primary key (company_id)

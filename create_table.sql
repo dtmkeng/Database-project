@@ -1,5 +1,5 @@
 create table users(
-  user_id  varchar2(20) not null,
+  user_id  number not null,
   username varchar2(100) not null,
   password varchar2(100) not null,
   primary key (user_id)
@@ -8,9 +8,9 @@ create table account(
    account_id varchar2(20) not null,
    create_date date not null,
    cvv varchar2(10) not null,
-   type varchar2(20) not null,
+   acc_type varchar2(20) not null,
    credit_num varchar2(100) not null,
-   user_id varchar2(20) not null,
+   user_id number not null,
    PRIMARY key (account_id),
    FOREIGN key  (user_id) REFERENCES users(user_id)
 );
@@ -32,7 +32,7 @@ CREATE TABLE program(
     relese_date date not null,
     buy_type VARCHAR2(50) not null,
     price number not null,
-    type VARCHAR2(50) null,
+    program_type VARCHAR2(50) null,
     company_id VARCHAR2(50) not null,
     key_id VARCHAR2(50) not null,
     primary key (program_id),
@@ -44,7 +44,7 @@ CREATE TABLE basket(
     item_list VARCHAR2(50) not null,
     add_date   date not null,
     total_price number not null,
-    user_id  varchar2(20) not null,
+    user_id  number not null,
     PRIMARY key (basket_id),
     FOREIGN key (user_id) REFERENCES  users(user_id)
 );
